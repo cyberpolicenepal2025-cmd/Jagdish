@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>UPI Landing - Cyber Crime Notice</title>
+<style>
+  :root{
+    --bg1:#050b1e; 
+    --bg2:#0d1a40; 
+    --card:#0f172a; 
+    --accent:#06b6d4; 
+    --text:#e6eef8; 
+    --muted:#cfe7f3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:var(--text);
+    padding:20px;
+  }
+  .card{
+    width:100%;
+    max-width:720px;
+    background:rgba(255,255,255,0.05);
+    border-radius:16px;
+    padding:26px 26px 32px;
+    box-shadow:0 8px 40px rgba(0,0,0,0.5), 0 0 10px rgba(6,182,212,0.15);
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(8px);
+    animation:fadeIn 1.2s ease;
+  }
+
+  @keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  .photo{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 20px;
+  }
+  .photo img{
+    width:220px;
+    max-width:80%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+    border-radius:10px;
+    background:#fff;
+    padding:8px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.3);
+    animation:fadeLogo 1.6s ease;
+  }
+  @keyframes fadeLogo{
+    from{opacity:0; transform:scale(0.9);}
+    to{opacity:1; transform:scale(1);}
+  }
+
+  h1{
+    margin:10px 0 8px;
+    font-size:22px;
+    letter-spacing:0.7px;
+    color:#00c6e8;
+    text-shadow:0 0 6px rgba(6,182,212,0.3);
+  }
+  .sub{ 
+    color:var(--muted); 
+    margin:6px 0 10px; 
+    font-size:15px;
+  }
+  .case{ 
+    margin-top:12px; 
+    background:rgba(255,255,255,0.04); 
+    padding:10px 14px; 
+    border-radius:8px; 
+    display:inline-block; 
+    border:1px solid rgba(255,255,255,0.06);
+  }
+  .case strong{ 
+    display:block; 
+    font-size:15px; 
+    color:var(--text); 
+  }
+
+  .code{ 
+    margin-top:10px; 
+    font-family:monospace; 
+    background:rgba(0,0,0,0.4); 
+    padding:8px 12px; 
+    border-radius:6px; 
+    display:inline-block; 
+    font-size:14px; 
+    color:var(--text);
+  }
+
+  .btn-wrap{ margin-top:22px; }
+  a.button{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:12px;
+    font-weight:700;
+    background:var(--accent);
+    color:#001c25;
+    box-shadow:0 6px 20px rgba(6,182,212,0.3);
+    transition:all 0.25s ease;
+  }
+  a.button:hover{
+    transform:scale(1.06);
+    box-shadow:0 10px 25px rgba(6,182,212,0.4);
+    background:#0ae0ff;
+  }
+  small{ 
+    display:block; 
+    margin-top:12px; 
+    color:var(--muted); 
+    font-size:13px;
+  }
+
+  @media (max-width:480px){
+    .photo img{ width:170px; }
+    .card{ padding:18px; }
+    h1{ font-size:19px; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="photo" role="img" aria-label="Delhi Police Logo">
+      <img src="delhi_police_logo.jpg" alt="Delhi Police Logo">
+    </div>
+
+    <h1>CYBER CRIME DEPARTMENT DELHI</h1>
+    <div class="sub">यह प्रक्रिया आपकी सुरक्षा के लिए है</div>
+
+    <div class="case">
+      <strong>Case No.: 885y</strong>
+    </div>
+
+    <div class="code">Code: 97983t57</div>
+
+    <div class="btn-wrap">
+      <a class="button" href="qr.html">भुगतान प्राप्त करने के लिए बटन दबाएँ</a>
+    </div>
+
+    <small>ऊपर दिए निर्देशों के अनुसार आगे बढ़ें।</small>
+  </div>
+</body>
+</html>
